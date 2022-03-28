@@ -6,6 +6,8 @@ ruby "3.0.1"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.2", ">= 7.0.2.3"
 
+gem 'dotenv-rails', require: 'dotenv/rails-now'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
@@ -73,5 +75,5 @@ group :development do
   # gem "spring"
 end
 
-
+gem 'google-cloud-storage'
 gem "tailwindcss-rails", "~> 2.0"
