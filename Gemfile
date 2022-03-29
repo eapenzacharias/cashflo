@@ -76,3 +76,4 @@ end
 
 gem 'google-cloud-storage'
 gem 'tailwindcss-rails', '~> 2.0'
+gem 'devise'
