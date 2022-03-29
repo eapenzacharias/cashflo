@@ -68,10 +68,12 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
+    bcrypt (3.1.17)
     bindex (0.8.1)
     bootsnap (1.11.1)
       msgpack (~> 1.2)
     builder (3.2.4)
+    cancancan (3.3.0)
     capybara (3.36.0)
       addressable
       matrix
@@ -88,6 +90,12 @@ GEM
       irb (>= 1.3.6)
       reline (>= 0.2.7)
     declarative (0.0.20)
+    devise (4.8.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
     diff-lcs (1.5.0)
     digest (3.1.0)
     digest-crc (0.6.4)
@@ -187,6 +195,7 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.3-arm64-darwin)
       racc (~> 1.4)
+    orm_adapter (0.5.0)
     os (1.1.4)
     pg (1.3.4)
     public_suffix (4.0.6)
@@ -230,6 +239,9 @@ GEM
       declarative (< 0.1.0)
       trailblazer-option (>= 0.1.1, < 0.2.0)
       uber (< 0.2.0)
+    responders (3.0.1)
+      actionpack (>= 5.0)
+      railties (>= 5.0)
     retriable (3.1.2)
     rexml (3.2.5)
     rspec-core (3.11.0)
@@ -283,6 +295,8 @@ GEM
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     uber (0.1.0)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -305,8 +319,10 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  cancancan
   capybara
   debug
+  devise
   dotenv-rails
   google-cloud-storage
   image_processing (~> 1.2)
