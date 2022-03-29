@@ -74,6 +74,6 @@ group :development do
   # gem "spring"
 end
 
+gem 'devise'
 gem 'google-cloud-storage'
 gem 'tailwindcss-rails', '~> 2.0'
-gem 'devise'
