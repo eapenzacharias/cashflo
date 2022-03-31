@@ -2,3 +2,28 @@
   <h1 class="font-bold text-4xl">Invoices#new</h1>
   <p>Find me in app/views/invoices/new.html.erb</p>
 </div>
+<div class="w-full">
+  <h1 class="font-bold text-4xl">New Invoice</h1>
+  <div class="mt-14">
+    <%= form_with model: @invoice, url: transactions_path, local: true, html: {"data-turbo": "false"} do |form| %>
+      <% if @invoice.errors.any? %>
+        <div class="border px-7 py-3 mb-4 border-red-400 bg-red-200 font-medium">
+          <% @recipe.errors.full_messages.each do |msg| %>
+            <p><%= msg %></p>
+          <% end %>
+        </div>
+      <% end %>
+      <div class="border p-7 flex flex-col gap-7">
+        <div>
+          <%= form.label :name, class: 'font-medium block mb-2' %>
+          <%= form.text_field :name, class: 'border rounded' %>
+        </div>
+        <div>
+          <%= form.label :category_id, class: 'font-medium block mb-2' %>
+          <%= form.select :category_id, options_from_collection_for_select(@categories, "id", "name"), {}, { class: "border rounded" } %>
+        </div>
+        <%= form.submit "Submit", class: 'text-sm px-4 py-2 bg-transparent hover:bg-teal-500 text-teal-700 max-w-fit font-semibold hover:text-white border border-teal-500 hover:border-transparent rounded' %>
+      </div>
+    <% end %>
+  </div>
+</div>

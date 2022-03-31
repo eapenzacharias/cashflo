@@ -1,4 +1,6 @@
 class TransactionsController < ApplicationController
+  before_action :authenticate_user!
+
   def index; end
 
   def new
@@ -7,9 +9,9 @@ class TransactionsController < ApplicationController
   end
 
   def create
-    @invoice = Invoice.new(name: invoice_params[:name], amount: invoice_params[:amount], category_id: invoice_params[:category_id] user: current_user)
+    @invoice = Invoice.new(name: invoice_params[:name], amount: invoice_params[:amount], category_id: invoice_params[:category_id], user: current_user)
     if @invoice.save
-      redirect_to categories_url, success: 'Category was successfully created.'
+      redirect_to category_path(invoice_params[:category_id]), success: 'Invoice added.'
     else
       render :new, status: :unprocessable_entity
     end
