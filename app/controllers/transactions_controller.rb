@@ -6,5 +6,20 @@ class TransactionsController < ApplicationController
     @categories = current_user.categories
   end
 
+  def create
+    @invoice = Invoice.new(name: invoice_params[:name], amount: invoice_params[:amount], category_id: invoice_params[:category_id] user: current_user)
+    if @invoice.save
+      redirect_to categories_url, success: 'Category was successfully created.'
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   def show; end
+
+  private
+
+  def invoice_params
+    params.require(:invoice).permit(:name, :amount, :category_id)
+  end
 end
