@@ -9,7 +9,10 @@ class CategoriesController < ApplicationController
     @category = Category.new
   end
 
-  def show; end
+  def show
+    @category = Category.find_by_id(params[:id])
+    @invoices = @category.invoices
+  end
 
   def create
     @category = Category.new(category_params.merge(user: current_user))
