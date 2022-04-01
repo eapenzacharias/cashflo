@@ -1,7 +1,9 @@
 class TransactionsController < ApplicationController
   before_action :authenticate_user!
 
-  def index; end
+  def index
+    @invoices = current_user.invoices
+  end
 
   def new
     @invoice = Invoice.new

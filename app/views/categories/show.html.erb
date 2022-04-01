@@ -2,4 +2,4 @@
   <h1 class="mb-2 text-2xl font-bold tracking-tight text-gray-900"><%= @category.name %></h1>
   <p>Find me in app/views/categories/show.html.erb</p>
 </div>
-<%= render partial: "invoice", collection: @invoices.order(:id) %>
+<%= render partial: "shared/invoice", collection: @invoices.order(:id) %>
