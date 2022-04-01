@@ -54,8 +54,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_29_213535) do
     t.string "name"
     t.decimal "amount"
     t.bigint "user_id", null: false
+    t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_invoices_on_category_id"
     t.index ["user_id"], name: "index_invoices_on_user_id"
   end
 
@@ -75,5 +77,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_29_213535) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "categories", "users"
+  add_foreign_key "invoices", "categories"
   add_foreign_key "invoices", "users"
 end

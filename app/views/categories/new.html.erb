@@ -8,7 +8,7 @@
     <%= form_with model: @category, url: categories_path, local: true, html: {"data-turbo": "false"} do |form| %>
       <% if @category.errors.any? %>
         <div class="border px-7 py-3 mb-4 border-red-400 bg-red-200 font-medium">
-          <% @recipe.errors.full_messages.each do |msg| %>
+          <% @category.errors.full_messages.each do |msg| %>
             <p><%= msg %></p>
           <% end %>
         </div>
