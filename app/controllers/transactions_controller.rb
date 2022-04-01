@@ -9,7 +9,8 @@ class TransactionsController < ApplicationController
   end
 
   def create
-    @invoice = Invoice.new(name: invoice_params[:name], amount: invoice_params[:amount], category_id: invoice_params[:category_id], user: current_user)
+    @invoice = Invoice.new(name: invoice_params[:name], amount: invoice_params[:amount],
+                           category_id: invoice_params[:category_id], user: current_user)
     if @invoice.save
       redirect_to category_path(invoice_params[:category_id]), success: 'Invoice added.'
     else
