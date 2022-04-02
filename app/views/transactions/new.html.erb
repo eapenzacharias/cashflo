@@ -16,11 +16,11 @@
       <div class="border p-7 flex flex-col gap-7">
         <div>
           <%= form.label :name, class: 'font-medium block mb-2' %>
-          <%= form.text_field :name, class: 'border rounded' %>
+          <%= form.text_field :name, required: true, class: 'border rounded' %>
         </div>
         <div>
           <%= form.label :amount, class: 'font-medium block mb-2' %>
-          <%= form.number_field :amount, value: number_to_currency(form.object.amount.to_f, delimiter: '.', unit: '$'), step: :any, class: 'border rounded' %>
+          <%= form.number_field :amount, value: number_to_currency(form.object.amount.to_f, delimiter: '.', unit: '$'), step: :any, required: true, class: 'border rounded' %>
         </div>
         <div>
           <%= form.label :category_id, class: 'font-medium block mb-2' %>

@@ -5,7 +5,7 @@
       <h1 class="font-bold text-center mb-6 text-2xl text-slate-500">Forgot Password?</h1>
       <%= render "devise/shared/error_messages", resource: resource %>
       <div class="w-full rounded-2xl bg-gray-50 ring-2 ring-gray-200 my-4">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', class: 'w-full px-4 rounded-2xl border-none bg-gray-50 outline-none focus:outline-none' %>
+        <%= f.email_field :email, autofocus: true, required: true, autocomplete: "email", placeholder: 'Email', class: 'w-full px-4 rounded-2xl border-none bg-gray-50 outline-none focus:outline-none' %>
       </div>
       <div class="actions my-4">
         <%= f.submit "Send Reset Password Instructions", class: "w-full rounded-2xl border-b-4 border-b-blue-600 bg-blue-500 py-2 mb-4 font-bold text-white hover:bg-blue-400 active:translate-y-[0.125rem] active:border-b-blue-400" %>
