@@ -1,6 +1,5 @@
-<div>
-  <h1 class="font-bold text-4xl">Categories#index</h1>
-  <div class="container mb-12">
+<div class="container mb-12 items-center justify-center mx-auto py-6">
+  <div class="flex flex-col gap-4 items-center justify-center px-4">
     <%= render partial: "category", collection: @categories.order(:id) %>
   </div>
 </div>

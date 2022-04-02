@@ -4,7 +4,7 @@
       <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
     </svg>
   </span>
-  <div class="sidebar fixed top-0 bottom-0 left-0 p-2 w-[300px] m-0 overflow-y-auto text-center bg-gradient-to-bl from-[#14335f] to-[#2f84c2]" x-show="open" x-transition>
+  <div class="sidebar fixed top-0 bottom-0 left-0 p-2 w-[300px] m-0 overflow-y-auto text-center bg-gradient-to-bl from-[#14335f] to-[#2f84c2] z-50" x-show="open" x-transition>
     <div class="text-gray-100 text-xl">
       <div class="p-2.5 mt-1 flex items-center">
         <%= image_tag 'logo.png', alt: 'cashFlo', style: 'width:200px;' %>
@@ -46,5 +46,10 @@
       </svg>
       <%= link_to 'Sign Out', destroy_user_session_path, class: 'text-[15px] ml-4 text-gray-200 font-bold' %>
     </div>
+  </div>
+  <div>
+    <h1 class="text-bold text-white uppercase "><%= @head? @head : ''%></h1>
+  </div>
+  <div>
   </div>
 </nav>
