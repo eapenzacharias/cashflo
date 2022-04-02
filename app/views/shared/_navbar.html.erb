@@ -1,0 +1,27 @@
+<nav class="flex items-center justify-between shadow flex-wrap bg-gradient-to-bl from-[#14335f] to-[#2f84c2] p-6">
+  <div class="block lg:hidden">
+    <button
+        type="button"
+        class="block lg:hidden px-2 text-slate-200 hover:text-white focus:outline-none focus:text-white"
+      >
+        <svg
+          class="h-6 w-6 fill-current"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+          />
+        </svg>
+      </button>
+  </div>
+  <div
+    class="w-full flex-grow lg:flex lg:items-center lg:w-auto"
+    :class="{ 'block shadow-3xl': isOpen, 'hidden': !isOpen }"
+  >
+    <div class="text-sm lg:flex-grow">
+
+    </div>
+  </div>
+</nav>

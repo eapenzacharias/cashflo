@@ -11,6 +11,9 @@
   </head>
   <body class="mx-auto bg-slate-100 flex flex-col">
     <header>
+      <% if user_signed_in? %>
+        <%= render partial: "shared/navbar" %>
+      <% end %>
     </header>
     <main class="w-full mx-auto bg-slate-100 flex flex-col">
       <%= yield %>
