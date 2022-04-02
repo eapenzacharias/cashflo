@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'static/landing'
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -8,5 +9,5 @@ Rails.application.routes.draw do
   resources :transactions, only: [:index, :show, :destroy, :new, :create]
 
   # Defines the root path route ("/")
-  root "categories#index"
+  root "static#landing"
 end
