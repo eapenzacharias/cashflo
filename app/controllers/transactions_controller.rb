@@ -3,6 +3,7 @@ class TransactionsController < ApplicationController
 
   def index
     @invoices = current_user.invoices
+    @head = 'All Invoices'
   end
 
   def new

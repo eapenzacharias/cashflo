@@ -1,6 +1,17 @@
-<%= link_to transaction_path(invoice.id), class: "flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 m-auto mt-4 md-4" do %>
-  <div class="flex flex-col justify-between p-4 leading-normal">
-    <h3 class="mb-2 text-2xl font-bold tracking-tight text-gray-900"><%= invoice.name %></h3>
-    <h3 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">$<%= invoice.amount %></h3>
-  </div>
-<% end %>
+<div class="max-w-md border-1 drop-shadow-lg bg-white rounded hover:bg-gray-50 mx-auto">
+  <%= link_to transaction_path(invoice.id) do %>
+    <div class="grid grid-cols-6 p-2 py-3 gap-y-2">
+      <div>
+        <img class="object-cover max-w-24 max-h-24 rounded-xl" src="<%= url_for(invoice.category.icon) %>" alt="<%= invoice.category.name %>">
+      </div>
+      <div class="col-span-3 md:col-span-4 ml-2 flex flex-col justify-center">
+        <h3 class="text-gray-600 text-xl"><%= invoice.name %></h3>
+        <p class="text-gray-400"><%= invoice.created_at.strftime("%d %b %Y") %></p>
+      </div>
+      <div class="flex col-start-auto mx-auto justify-center items-center flex-col text-right">
+        <p class="rounded text-slate-500 font-semibold w-max">$ <%= invoice.amount %> </p>
+        <p class="text-gray-400 w-max"><%= invoice.category.name %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
