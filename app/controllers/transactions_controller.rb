@@ -2,7 +2,7 @@ class TransactionsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @invoices = current_user.invoices
+    @invoices = current_user.invoices.order(created_at: :desc)
     @head = 'All Invoices'
   end
 

@@ -14,7 +14,7 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find_by_id(params[:id])
     @head = @category.name
-    @invoices = @category.invoices
+    @invoices = @category.invoices.order(created_at: :desc)
   end
 
   def create
