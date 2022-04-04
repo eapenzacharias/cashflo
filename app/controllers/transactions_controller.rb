@@ -9,6 +9,7 @@ class TransactionsController < ApplicationController
   def new
     @invoice = Invoice.new
     @categories = current_user.categories
+    @head = 'Add Invoice'
   end
 
   def create

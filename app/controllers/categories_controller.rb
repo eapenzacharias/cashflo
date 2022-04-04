@@ -8,6 +8,7 @@ class CategoriesController < ApplicationController
 
   def new
     @category = Category.new
+    @head = 'Add Category'
   end
 
   def show
