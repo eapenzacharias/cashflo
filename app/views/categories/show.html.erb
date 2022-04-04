@@ -10,7 +10,7 @@
     </div>
   </div>
   <div class="flex flex-col gap-4 items-center justify-center px-4">
-    <%= render partial: "shared/invoice", collection: @invoices.order(:id) %>
+    <%= render partial: "shared/invoice", collection: @invoices %>
   </div>
   <div class="fixed bottom-0 left-0 right-0 z-1 h-14 flex items-center justify-center">
     <div class="md:hidden w-full h-14 flex items-center justify-center bg-gradient-to-r from-[#409b00] to-[#347604] hover:from-[#347604] hover:to-[#409b00] z-10">
