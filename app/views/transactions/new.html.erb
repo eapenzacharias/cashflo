@@ -1,11 +1,7 @@
-<div>
-  <h1 class="font-bold text-4xl">Invoices#new</h1>
-  <p>Find me in app/views/invoices/new.html.erb</p>
-</div>
-<div class="w-full">
-  <h1 class="font-bold text-4xl">New Invoice</h1>
-  <div class="mt-14">
-    <%= form_with model: @invoice, url: transactions_path, local: true, html: {"data-turbo": "false"} do |form| %>
+<div class="container mb-12 items-center justify-center mx-auto pb-10 pt-24">
+  <div class="my-16 flex flex-col items-center justify-center w-80 mx-auto">
+    <h1 class="font-bold text-center mb-6 text-2xl text-slate-500">New Invoice</h1>
+    <%= form_with model: @invoice, url: transactions_path, local: true, html: {"data-turbo": "false", class: 'w-full'} do |form| %>
       <% if @invoice.errors.any? %>
         <div class="border px-7 py-3 mb-4 border-red-400 bg-red-200 font-medium">
           <% @recipe.errors.full_messages.each do |msg| %>
@@ -13,21 +9,16 @@
           <% end %>
         </div>
       <% end %>
-      <div class="border p-7 flex flex-col gap-7">
-        <div>
-          <%= form.label :name, class: 'font-medium block mb-2' %>
-          <%= form.text_field :name, required: true, class: 'border rounded' %>
-        </div>
-        <div>
-          <%= form.label :amount, class: 'font-medium block mb-2' %>
-          <%= form.number_field :amount, value: number_to_currency(form.object.amount.to_f, delimiter: '.', unit: '$'), step: :any, required: true, class: 'border rounded' %>
-        </div>
-        <div>
-          <%= form.label :category_id, class: 'font-medium block mb-2' %>
-          <%= form.select :category_id, options_from_collection_for_select(@categories, "id", "name"), {}, { class: "border rounded" } %>
-        </div>
-        <%= form.submit "Submit", class: 'text-sm px-4 py-2 bg-transparent hover:bg-teal-500 text-teal-700 max-w-fit font-semibold hover:text-white border border-teal-500 hover:border-transparent rounded' %>
+      <div class="w-full rounded-2xl bg-gray-50 ring-2 ring-gray-200 my-4">
+        <%= form.text_field :name, required: true, placeholder: 'Invoice Name', class: 'w-full px-4 rounded-2xl border-none bg-gray-50 outline-none focus:outline-none' %>
       </div>
+      <div class="w-full rounded-2xl bg-gray-50 ring-2 ring-gray-200 my-4">
+        <%= form.number_field :amount, value: number_to_currency(form.object.amount.to_f, delimiter: '.', unit: '$'), step: :any, required: true, placeholder: 'Invoice Amount $', class: 'w-full px-4 rounded-2xl border-none bg-gray-50 outline-none focus:outline-none' %>
+      </div>
+      <div class="w-full rounded-2xl bg-gray-50 ring-2 ring-gray-200 my-4">
+        <%= form.select :category_id, options_from_collection_for_select(@categories, "id", "name"), {}, { class: 'w-full px-4 rounded-2xl border-none bg-gray-50 outline-none focus:outline-none' } %>
+      </div>
+      <%= form.submit "Submit", class: "w-full rounded-2xl border-b-4 border-b-blue-500 bg-blue-400 py-2 my-4 font-bold text-white text-center hover:bg-blue-300 active:translate-y-[0.125rem] active:border-b-blue-300" %>
     <% end %>
   </div>
 </div>
