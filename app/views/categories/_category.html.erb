@@ -1,10 +1,10 @@
 <div class="max-w-md border-1 drop-shadow-lg bg-white rounded hover:bg-gray-50 mx-auto">
   <%= link_to category_path(category.id) do %>
-    <div class="grid grid-cols-6 p-2 py-3 gap-y-2">
+    <div class="grid grid-cols-12 p-2 py-3 gap-y-2">
       <div>
         <img class="object-cover max-w-24 max-h-24 rounded-xl" src="<%= url_for(category.icon) || "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" %>" alt="<%= category.name %>">
       </div>
-      <div class="col-span-3 md:col-span-4 ml-2 flex flex-col justify-center">
+      <div class="col-span-7 ml-2 flex flex-col justify-center">
         <h3 class="text-gray-600 text-xl"><%= category.name %></h3>
         <p class="text-gray-400"><%= category.created_at.strftime("%d %b %Y") %></p>
       </div>
