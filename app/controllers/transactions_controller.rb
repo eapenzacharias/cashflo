@@ -3,11 +3,13 @@ class TransactionsController < ApplicationController
 
   def index
     @invoices = current_user.invoices
+    @head = 'All Invoices'
   end
 
   def new
     @invoice = Invoice.new
     @categories = current_user.categories
+    @head = 'Add Invoice'
   end
 
   def create

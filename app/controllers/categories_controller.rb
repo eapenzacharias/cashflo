@@ -2,15 +2,18 @@ class CategoriesController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @head = 'Categories'
     @categories = current_user.categories
   end
 
   def new
     @category = Category.new
+    @head = 'Add Category'
   end
 
   def show
     @category = Category.find_by_id(params[:id])
+    @head = @category.name
     @invoices = @category.invoices
   end
 
