@@ -21,9 +21,11 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params.merge(user: current_user))
     if @category.save
-      redirect_to categories_url, success: 'Category was successfully created.'
+      flash[:notice] = 'Category created.'
+      redirect_to categories_url
     else
-      render :new, status: :unprocessable_entity
+      flash[:fail] = 'Creation unsucessful.'
+      render :new
     end
   end
 

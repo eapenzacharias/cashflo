@@ -4,7 +4,7 @@
     <%= form_with model: @invoice, url: transactions_path, local: true, html: {"data-turbo": "false", class: 'w-full'} do |form| %>
       <% if @invoice.errors.any? %>
         <div class="border px-7 py-3 mb-4 border-red-400 bg-red-200 font-medium">
-          <% @recipe.errors.full_messages.each do |msg| %>
+          <% @invoice.errors.full_messages.each do |msg| %>
             <p><%= msg %></p>
           <% end %>
         </div>

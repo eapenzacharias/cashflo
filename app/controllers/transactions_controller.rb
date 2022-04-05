@@ -14,12 +14,13 @@ class TransactionsController < ApplicationController
   end
 
   def create
-    @invoice = Invoice.new(name: invoice_params[:name], amount: invoice_params[:amount],
-                           category_id: invoice_params[:category_id], user: current_user)
+    @invoice = Invoice.new(invoice_params.merge(user: current_user))
     if @invoice.save
-      redirect_to category_path(invoice_params[:category_id]), success: 'Invoice added.'
+      flash[:notice] = 'Invoice created.'
+      redirect_to categories_path
     else
-      render :new, status: :unprocessable_entity
+      flash[:fail] = 'Creation unsucessful'
+      render :new
     end
   end
 
@@ -31,7 +32,7 @@ class TransactionsController < ApplicationController
   def update
     @invoice = Invoice.find_by_id(params[:id])
     if @invoice.update(invoice_params.merge(user: current_user))
-      flash[:success] = 'Invoice updated.'
+      flash[:notice] = 'Invoice updated.'
       redirect_to categories_path
     else
       flash[:fail] = 'Updation unsucessful.'
@@ -41,7 +42,7 @@ class TransactionsController < ApplicationController
   def destroy
     @invoice = Invoice.find_by_id(params[:id])
     if @invoice.destroy
-      flash[:success] = 'Invoice deleted.'
+      flash[:notice] = 'Invoice deleted.'
       redirect_to categories_path
     else
       flash[:fail] = 'Deletion unsucessful.'
