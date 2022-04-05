@@ -19,7 +19,9 @@
         <%= form.select :category_id, options_from_collection_for_select(@categories, "id", "name", selected: @invoice.category_id ), {}, { class: 'w-full px-4 rounded-2xl border-none bg-gray-50 outline-none focus:outline-none' } %>
       </div>
       <%= form.submit "Update", class: "w-full rounded-2xl border-b-4 border-b-blue-500 bg-blue-400 py-2 my-4 font-bold text-white text-center hover:bg-blue-300 active:translate-y-[0.125rem] active:border-b-blue-300" %>
-      <%= button_to "Delete", transaction_path(@invoice.id), method: :delete, class: "w-full rounded-2xl border-b-4 border-b-red-500 bg-red-400 py-2 my-4 font-bold text-white text-center hover:bg-red-300 active:translate-y-[0.125rem] active:border-b-red-300" %>
     <% end %>
+    <div class="w-full">
+      <%= button_to "Delete", transaction_path(@invoice.id), method: :delete, class: "w-full rounded-2xl border-b-4 border-b-red-500 bg-red-400 py-2 my-4 font-bold text-white text-center hover:bg-red-300 active:translate-y-[0.125rem] active:border-b-red-300" %>
+    </div>
   </div>
 </div>
