@@ -1,5 +1,6 @@
 class TransactionsController < ApplicationController
   before_action :authenticate_user!
+  before_action :check_categories
 
   def index
     @invoices = current_user.invoices.order(created_at: :desc)
@@ -38,12 +39,25 @@ class TransactionsController < ApplicationController
   end
 
   def destroy
-
+    @invoice = Invoice.find_by_id(params[:id])
+    if @invoice.destroy
+      flash[:success] = 'Invoice deleted.'
+      redirect_to categories_path
+    else
+      flash[:fail] = 'Deletion unsucessful.'
+    end
   end
 
   private
 
   def invoice_params
     params.require(:invoice).permit(:name, :amount, :category_id)
+  end
+
+  def check_categories
+    if current_user.categories.empty?
+      flash[:warning] = 'Create a category first!'
+      redirect_to new_category_path
+    end
   end
 end
