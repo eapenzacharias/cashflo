@@ -55,9 +55,9 @@ class TransactionsController < ApplicationController
   end
 
   def check_categories
-    if current_user.categories.empty?
-      flash[:warning] = 'Create a category first!'
-      redirect_to new_category_path
-    end
+    return unless current_user.categories.empty?
+
+    flash[:warning] = 'Create a category first!'
+    redirect_to new_category_path
   end
 end
