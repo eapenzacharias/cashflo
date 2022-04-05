@@ -1,5 +1,5 @@
 <div class="max-w-md border-1 drop-shadow-lg bg-white rounded hover:bg-gray-50 mx-auto">
-  <%= link_to transaction_path(invoice.id) do %>
+  <%= link_to edit_transaction_path(invoice.id) do %>
     <div class="grid grid-cols-12 p-2 py-3 gap-y-2">
       <div class="col-span-2">
         <img class="object-cover max-w-24 max-h-24 rounded-xl" src="<%= url_for(invoice.category.icon) %>" alt="<%= invoice.category.name %>">
