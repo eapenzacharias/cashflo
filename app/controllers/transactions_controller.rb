@@ -22,7 +22,24 @@ class TransactionsController < ApplicationController
     end
   end
 
-  def show; end
+  def edit
+    @invoice = Invoice.find_by_id(params[:id])
+    @categories = current_user.categories
+  end
+
+  def update
+    @invoice = Invoice.find_by_id(params[:id])
+    if @invoice.update(invoice_params.merge(user: current_user))
+      flash[:success] = 'Invoice updated.'
+      redirect_to categories_path
+    else
+      flash[:fail] = 'Updation unsucessful.'
+    end
+  end
+
+  def destroy
+
+  end
 
   private
 
