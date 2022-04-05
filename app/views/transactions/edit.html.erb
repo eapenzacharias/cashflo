@@ -1,6 +1,6 @@
 <div class="container mb-12 items-center justify-center mx-auto pb-10 pt-24">
   <div class="my-16 flex flex-col items-center justify-center w-80 mx-auto">
-    <h1 class="font-bold text-center mb-6 text-2xl text-slate-500">New Invoice</h1>
+    <h1 class="font-bold text-center mb-6 text-2xl text-slate-500">Update Invoice</h1>
     <%= form_with model: @invoice, url: transaction_path(@invoice), method: :patch, local: true, html: {"data-turbo": "false", class: 'w-full'} do |form| %>
       <% if @invoice.errors.any? %>
         <div class="border px-7 py-3 mb-4 border-red-400 bg-red-200 font-medium">
