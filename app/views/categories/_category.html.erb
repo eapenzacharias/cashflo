@@ -10,7 +10,7 @@
       </div>
       <div class="flex col-start-auto mx-auto justify-center items-center flex-col text-right">
         <p class="text-gray-400"> Expenses </p>
-        <p class="rounded text-slate-500 font-semibold w-max"><%= category_sum(category)%> </p>
+        <p class="rounded text-slate-500 font-semibold w-max"><%= category_sum(category.invoices)%> </p>
       </div>
     </div>
   <% end %>

@@ -7,4 +7,10 @@ class User < ApplicationRecord
   validates :email, presence: true
   has_many :categories, dependent: :destroy
   has_many :invoices, dependent: :destroy
+
+  ROLES = %i[admin user].freeze
+
+  def is?(requested_role)
+    role == requested_role.to_s
+  end
 end

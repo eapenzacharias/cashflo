@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource
 
   def index
     @head = 'Categories'
@@ -14,15 +15,17 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find_by_id(params[:id])
     @head = @category.name
-    @invoices = @category.invoices
+    @invoices = @category.invoices.order(created_at: :desc)
   end
 
   def create
     @category = Category.new(category_params.merge(user: current_user))
     if @category.save
-      redirect_to categories_url, success: 'Category was successfully created.'
+      flash[:notice] = 'Category created.'
+      redirect_to categories_url
     else
-      render :new, status: :unprocessable_entity
+      flash[:fail] = 'Creation unsucessful.'
+      render :new
     end
   end
 

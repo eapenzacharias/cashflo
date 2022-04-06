@@ -8,7 +8,7 @@
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
   <body class="mx-auto bg-slate-100 flex flex-col">
     <header>
@@ -16,6 +16,25 @@
         <%= render partial: "shared/navbar" %>
       <% end %>
     </header>
+    <div class="mx-auto">
+      <% flash.each do |type, msg| %>
+        <div class="w-full fixed top-0 left-0 z-20" x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 1500)">
+          <% if type == 'notice' %>
+            <div class="mx-auto bg-green-200">
+              <p class="container mx-auto py-3 px-10"><%= msg %></p>
+            </div>
+          <% elsif type == 'warning' %>
+            <div class="mx-auto bg-yellow-200">
+              <p class="container mx-auto py-3 px-10"><%= msg %></p>
+            </div>
+          <% elsif type == 'fail' || type = 'alert' %>
+            <div class="mx-auto bg-red-200">
+              <p class="container mx-auto py-3 px-10"><%= msg %></p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
     <main class="w-full mx-auto bg-slate-100 flex flex-col">
       <%= yield %>
     </main>

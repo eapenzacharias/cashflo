@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   resources :categories, only: [:index, :show, :destroy, :new, :create]
-  resources :transactions, only: [:index, :show, :destroy, :new, :create]
+  resources :transactions, only: [:index, :destroy, :new, :create, :edit, :update]
 
   # Defines the root path route ("/")
   root "static#landing"

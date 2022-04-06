@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :update_allowed_parameters, if: :devise_controller?
+  add_flash_types :notice, :warning, :fail
 
   protected
 
