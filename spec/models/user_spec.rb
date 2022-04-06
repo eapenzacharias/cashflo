@@ -27,4 +27,8 @@ RSpec.describe User, type: :model do
     subject.password = nil
     expect(subject).to_not be_valid
   end
+
+  it 'should have role' do
+    expect(subject.role).to eq 'user'
+  end
 end
