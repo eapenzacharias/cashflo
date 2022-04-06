@@ -25,6 +25,7 @@ class TransactionsController < ApplicationController
   end
 
   def edit
+    @head = 'Update Invoice'
     @invoice = Invoice.find_by_id(params[:id])
     @categories = current_user.categories
   end
