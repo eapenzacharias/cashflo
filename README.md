@@ -36,7 +36,7 @@ git clone git@github.com:eapenzacharias/cashflo.git && cd cashflo
 Run the following command to install all the dependencies.
 
 ```sh
-bundler install
+bundle install
 ```
 
 ### Usage
@@ -64,7 +64,7 @@ bundle exec rspec spec
 
 - GitHub: [@eapenzacharias](https://github.com/eapenzacharias)
 - Twitter: [@eapenzac](https://twitter.com/eapenzac)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/eapenzac)
+- LinkedIn: [@eapenzac](https://linkedin.com/in/eapenzac)
 
 ## Acknowledgments
 - Design Inspiration [Gregoire Vella on Behance](https://www.behance.net/gregoirevella).
