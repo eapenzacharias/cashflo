@@ -6,7 +6,7 @@ DatabaseCleaner.strategy = :truncation
 RSpec.describe Invoice, type: :model do
   before do
     DatabaseCleaner.clean
-    user = User.create(id: 1, name: 'User', email: 'test6@test.com', password: 'test1234', password_confirmation: 'test1234')
+    user = User.create(id: 1, name: 'User', email: 'user1@test.com', password: 'test1234', password_confirmation: 'test1234')
     Category.create(id: 1, name: 'Foods', user: user, icon: fixture_file_upload(file_fixture('foods.png')))
   end
 

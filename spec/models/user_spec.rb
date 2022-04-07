@@ -5,7 +5,7 @@ DatabaseCleaner.strategy = :truncation
 
 RSpec.describe User, type: :model do
   subject do
-    User.new(name: 'User', email: 'test6@test.com', password: 'test1234', password_confirmation: 'test1234')
+    User.new(id: 1, name: 'User', email: 'user1@test.com', password: 'test1234', password_confirmation: 'test1234')
   end
 
   before do

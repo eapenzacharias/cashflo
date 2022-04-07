@@ -4,7 +4,7 @@ require 'database_cleaner/active_record'
 DatabaseCleaner.strategy = :truncation
 
 RSpec.describe Category, type: :model do
-  user = User.create(name: 'User', email: 'test6@test.com', password: 'test1234', password_confirmation: 'test1234')
+  user = User.create(id: 1, name: 'User', email: 'user1@test.com', password: 'test1234', password_confirmation: 'test1234')
 
   before do
     DatabaseCleaner.clean
