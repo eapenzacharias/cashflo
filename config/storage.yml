@@ -10,7 +10,7 @@ google:
     type: service_account
     project_id: "<%= ENV['GCS_PROJECT_ID'] %>"
     private_key_id: "<%= ENV['GCS_PRIVATE_KEY_ID'] %>"
-    private_key: "<%= ENV['GCS_PRIVATE_KEY'] %>"
+    private_key: "<%= ENV['GCS_PRIVATE_KEY'].indent(8) %>"
     client_email: "<%= ENV['GCS_CLIENT_EMAIL'] %>"
     client_id: "<%= ENV['GCS_CLIENT_ID'] %>"
     auth_uri: "https://accounts.google.com/o/oauth2/auth"
