@@ -180,6 +180,7 @@ GEM
     method_source (1.0.0)
     mini_magick (4.11.0)
     mini_mime (1.1.2)
+    mini_portile2 (2.8.0)
     minitest (5.15.0)
     msgpack (1.4.5)
     multi_json (1.15.0)
@@ -199,7 +200,12 @@ GEM
       net-protocol
       timeout
     nio4r (2.5.8)
+    nokogiri (1.13.3)
+      mini_portile2 (~> 2.8.0)
+      racc (~> 1.4)
     nokogiri (1.13.3-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.13.3-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     os (1.1.4)
@@ -290,7 +296,11 @@ GEM
     stimulus-rails (1.0.4)
       railties (>= 6.0.0)
     strscan (3.0.1)
+    tailwindcss-rails (2.0.8)
+      railties (>= 6.0.0)
     tailwindcss-rails (2.0.8-arm64-darwin)
+      railties (>= 6.0.0)
+    tailwindcss-rails (2.0.8-x86_64-linux)
       railties (>= 6.0.0)
     thor (1.2.1)
     timeout (0.2.0)
@@ -322,6 +332,8 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  ruby
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap
