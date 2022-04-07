@@ -28,5 +28,9 @@ RSpec.describe 'Categories#index' do
     it 'should have an icon' do
       expect(page).to have_css('img')
     end
+    it 'should have Data Panel' do
+      expect(page).to have_text('Total Spend')
+      expect(page).to have_text('Last 30 Days')
+    end
   end
 end
