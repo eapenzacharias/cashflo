@@ -1,0 +1,11 @@
+<div class="h-screen w-full flex flex-col justify-center items-center bg-gradient-to-bl from-[#14335f] to-[#2f84c2]">
+  <h1 class="hidden">cashFlo</h1>
+  <%= image_tag 'logo.png', alt: 'cashFlo', class: 'max-w-xs' %>
+  <div class="bg-[#5fb523] px-4 text-sm rounded rotate-[-4deg]">
+    Track Your Expenses With Ease!
+  </div>
+  <div class="flex p-2 max-w-xs justify-center mt-20 align-bottom ">
+    <%= link_to 'Sign In', new_user_session_path, class: 'min-w-auto w-32 h-10 bg-gradient-to-r from-[#409b00] to-[#347604] hover:from-[#347604] hover:to-[#409b00] text-center text-white font-semibold p-2 rounded-full mr-2 duration-200 ease-in-out' %>
+    <%= link_to 'Sign Up', new_user_registration_path, class: 'min-w-auto w-32 h-10 bg-gradient-to-r from-[#347604] to-[#409b00] hover:from-[#409b00] hover:to-[#347604] text-center text-white font-semibold p-2 rounded-full ml-2 duration-200 ease-in-out' %>
+  </div>
+</div>

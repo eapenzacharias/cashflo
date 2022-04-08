@@ -1,0 +1,30 @@
+<div class="px-4 mx-auto container align-middle mb-6 max-w-md">
+  <div class="grid grid-cols-2 gap-2">
+    <div class="shadow rounded-lg py-3 px-5 bg-white">
+      <div class="flex flex-row justify-between items-center">
+        <div>
+          <h6 class="text-slate-400 font-semibold">Total Spend</h6>
+          <h6 class="text-slate-500 text-xl font-bold text-left"><%= category_sum(invoices)%></h6>
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="#14B8A6" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="shadow rounded-lg py-3 px-5 bg-white">
+      <div class="flex flex-row justify-between items-center">
+        <div>
+          <h6 class="text-slate-400 font-semibold">Last 30 Days</h6>
+          <h6 class="text-slate-500 text-xl font-bold text-left"><%= last_month_sum(invoices)%></h6>
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="#14B8A6" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

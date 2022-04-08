@@ -1,0 +1,14 @@
+<div class="container mb-12 items-center justify-center mx-auto pb-10 pt-24">
+  <%= render partial: "shared/data_panel", locals: {invoices: @invoices } %>
+  <div class="flex flex-col gap-4 items-center justify-center px-4">
+    <%= render partial: "shared/invoice", collection: @invoices %>
+  </div>
+  <div class="fixed bottom-0 left-0 right-0 z-1 h-14 flex items-center justify-center">
+    <div class="md:hidden w-full h-14 flex items-center justify-center bg-gradient-to-r from-[#409b00] to-[#347604] hover:from-[#347604] hover:to-[#409b00] z-10">
+      <%= link_to 'Add Invoice', new_transaction_path, class: 'text-[15px] text-gray-200 font-bold' %>
+    </div>
+    <div class="hidden md:flex w-full h-14 items-center justify-center z-10">
+      <%= link_to 'Add Invoice', new_transaction_path, class: "w-80 rounded-2xl border-1 py-2 my-4 font-bold text-white text-center bg-gradient-to-r from-[#409b00] to-[#347604] hover:from-[#347604] hover:to-[#409b00] active:translate-y-[0.125rem] drop-shadow-lg" %>
+    </div>
+  </div>
+</div>
