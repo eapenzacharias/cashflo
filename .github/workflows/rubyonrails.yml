@@ -55,5 +55,5 @@ jobs:
         run: bin/rails db:schema:load
       # Add or replace test runners here
       - name: Run tests
-        run: bundle exec rake spec
+        run: bundle exec rspec spec/models
         
