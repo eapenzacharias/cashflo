@@ -1,3 +1,5 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/929dc603d4a0d8d0637c/maintainability)](https://codeclimate.com/github/eapenzacharias/cashflo/maintainability) [![Linters](https://github.com/eapenzacharias/cashflo/actions/workflows/linters.yml/badge.svg)](https://github.com/eapenzacharias/cashflo/actions/workflows/linters.yml) 
+
 # cashFlo
 
 > Rails application to track your cash flow
