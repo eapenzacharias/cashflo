@@ -10,6 +10,15 @@ on:
     branches: [ dev ]
   pull_request:
     branches: [ dev ]
+env:
+    GCS_PROJECT_ID: ea-rails-capstone
+    GCS_PRIVATE_KEY_ID: test
+    GCS_PRIVATE_KEY: "-----BEGIN PRIVATE KEY--O1Pfiutg=\n-----END PRIVATE KEY-----\n"
+    GCS_CLIENT_EMAIL: cashflo@etest.com
+    GCS_CLIENT_ID: 000000
+    GCS_AUTH_PROVIDER_X509_CERT_URL: test.com
+    GCS_PROJECT: "ea-rails-capstone"
+    GCS_BUCKET: test
 jobs:
   test:
     runs-on: ubuntu-latest
